@@ -654,3 +654,181 @@ nav ul li a:hover {
   font-weight: 500;
   transition: opacity 0.3s ease;
 }
+/* ------------------- VOLUNTEER SECTION ------------------- */
+#volunteer {
+  text-align: center;
+  padding: 80px 0;
+  margin-top: 0;
+  background: #0a0a0a;
+  color: #fff;
+}
+
+#volunteer .container {
+  padding: 0 5%;
+}
+
+#volunteer .sub-title {
+  font-size: 50px;
+  font-weight: 600;
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+/* Slider container */
+.volunteer-slider {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Slides container */
+.volunteer-slides {
+  display: flex;
+  transition: transform 0.8s ease-in-out;
+}
+
+/* Each slide */
+.volunteer {
+  display: flex;
+  flex: 0 0 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  background: #111;
+  border: 2px solid #00c2ff;
+  border-radius: 15px;
+  padding: 40px;
+  box-shadow: 0 0 30px rgba(0, 194, 255, 0.3);
+}
+
+/* Image */
+.volunteer img {
+  width: 45%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.6s ease;
+}
+
+.volunteer:hover img {
+  transform: scale(1.05);
+}
+
+/* Info */
+.volunteer-info {
+  flex: 1;
+  text-align: left;
+}
+
+.volunteer-info h2 {
+  color: #00c2ff;
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.volunteer-info h4 {
+  color: #ff004f;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.volunteer-info p {
+  font-size: 17px;
+  line-height: 1.6;
+  color: #ddd;
+  margin-bottom: 25px;
+}
+
+.duration {
+  display: inline-block;
+  font-size: 14px;
+  color: #aaa;
+  margin-top: 10px;
+}
+
+/* Buttons inside volunteer cards */
+.volunteer-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.volunteer-buttons .btn {
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+/* Primary & secondary color scheme */
+.view-btn {
+  background: #00c2ff;
+  color: #fff;
+  border: none;
+}
+
+.view-btn:hover {
+  background: #00a3d4;
+  transform: translateY(-3px);
+}
+
+.certificate-btn {
+  background: transparent;
+  border: 2px solid #00c2ff;
+  color: #00c2ff;
+}
+
+.certificate-btn:hover {
+  background: #00c2ff;
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+/* Arrows */
+.vol-arrow {
+  background: rgba(0, 194, 255, 0.7);
+  border: none;
+  color: #fff;
+  font-size: 30px;
+  padding: 10px 16px;
+  cursor: pointer;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.vol-arrow:hover {
+  background: #00c2ff;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.vol-arrow.left {
+  left: -20px;
+}
+
+.vol-arrow.right {
+  right: -20px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .volunteer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .volunteer img {
+    width: 100%;
+    height: 250px;
+  }
+
+  .vol-arrow {
+    display: none;
+  }
+
+  .volunteer-info {
+    text-align: center;
+  }
+}

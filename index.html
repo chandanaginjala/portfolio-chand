@@ -18,6 +18,7 @@
           <li><a href="#">Home</a></li>
           <li><a href="#about">About Me</a></li>
           <li><a href="#projects">Projects</a></li>
+          <li><a href="#volunteer">Volunteer</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
         <a href="https://drive.google.com/file/d/1Ck2Pqx5H2YpnSu9LDA21PGdaimQkLwdD/view?pli=1" class="btn resume-btn" target="_blank">Resume</a>
@@ -201,6 +202,78 @@
   </div>
 </section>
 
+<!-- --------------------------VOLUNTEER SECTION----------------------- -->
+<section id="volunteer">
+  <div class="container">
+    <h1 class="sub-title">Volunteer Work</h1>
+
+    <div class="volunteer-slider">
+      <!-- Left Arrow -->
+      <button class="vol-arrow left" onclick="changeVolunteerSlide(-1)">&#10094;</button>
+
+      <!-- Slides -->
+      <div class="volunteer-slides" id="volunteerSlides">
+
+        <!-- Volunteer 1 -->
+        <div class="volunteer">
+          <img src="images/volunteer1.png" alt="Rotaract Logo">
+          <div class="volunteer-info">
+            <h2> Rotaract </h2>
+            <h4>District Editorial Director</h4>
+            <p>
+              Conducted coding sessions for high school students to promote computer literacy and problem-solving skills.
+            </p>
+            <div class="volunteer-buttons">
+              <a href="https://www.instagram.com/p/C05sRqircri/?igsh=MWxia3IxMmIyczg1bg%3D%3D" target="_blank" class="btn view-btn">View Certificate</a>
+              <a href="https://www.rotary.org/en/" target="_blank" class="btn certificate-btn">Details</a>
+            </div>
+            <span class="duration">Jun 2020 – June 2023</span>
+          </div>
+        </div>
+
+        <!-- Volunteer 2 -->
+        <div class="volunteer">
+          <img src="images/volunteer2.jpg" alt="NCC">
+          <div class="volunteer-info">
+            <h2> National Cadet Corps(NCC) </h2>
+            <h4>  Rank: Corporal </h4>
+            <p>
+              Organized events fostering mentorship and networking opportunities for women in technology.
+            </p>
+            <div class="volunteer-buttons">
+              <a href="https://drive.google.com/file/d/1gj6jbVYzjofulb-JaV-2kQCJPqwu6cz9/view" target="_blank" class="btn view-btn">View Certificate</a>
+              <a href="https://indiancc.mygov.in/" target="_blank" class="btn certificate-btn">Details</a>
+            </div>
+            <span class="duration">June 2016 – June 2023</span>
+          </div>
+        </div>
+
+        <!-- Volunteer 3 -->
+        <div class="volunteer">
+          <img src="images/volunteer3.png" alt="NSS">
+          <div class="volunteer-info">
+            <h2> National Service Scheme(NSS) </h2>
+            <h4> Volunteer </h4>
+            <p>
+              Organized events fostering mentorship and networking opportunities for women in technology.
+            </p>
+            <div class="volunteer-buttons">
+              <a href="https://drive.google.com/file/d/1WDi1ilL5db0ChBVd3y4b-oehF5APl1HG/view" target="_blank" class="btn view-btn">View Certificate</a>
+              <a href="https://nss.gov.in/" target="_blank" class="btn certificate-btn">Details</a>
+            </div>
+            <span class="duration">May 2021 – Jul 2023</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right Arrow -->
+      <button class="vol-arrow right" onclick="changeVolunteerSlide(1)">&#10095;</button>
+    </div>
+  </div>
+</section>
+
+
 <!-- ------------------- CONTACT SECTION ------------------- -->
 <div id="contact">
   <div class="container contact-container">
@@ -220,7 +293,7 @@
   Download CV
 </a>
     </div>
-
+ 
     <!-- Right Column -->
     <div class="contact-right">
       <form name="submit-to-google-sheet">
@@ -236,28 +309,55 @@
 </div>
 
 
+<!-- ------------------- PROJECT SLIDER SCRIPT ------------------- -->
 <script>
-  let currentSlide = 0;
+  let currentProjectSlide = 0;
 
-  function showSlide(index) {
-    const slides = document.getElementById('projectSlides');
+  function showProjectSlide(index) {
+    const slides = document.getElementById("projectSlides");
     const total = slides.children.length;
 
-    // Wrap around
-    if (index >= total) currentSlide = 0;
-    else if (index < 0) currentSlide = total - 1;
-    else currentSlide = index;
+    // Wrap around logic
+    if (index >= total) currentProjectSlide = 0;
+    else if (index < 0) currentProjectSlide = total - 1;
+    else currentProjectSlide = index;
 
-    slides.style.transform = `translateX(-${currentSlide * 100}%)`;
+    slides.style.transform = `translateX(-${currentProjectSlide * 100}%)`;
   }
 
-  function changeSlide(direction) {
-    showSlide(currentSlide + direction);
+  function changeProjectSlide(direction) {
+    showProjectSlide(currentProjectSlide + direction);
   }
 
   // Auto-slide every 5 seconds
-  setInterval(() => changeSlide(1), 5000);
+  setInterval(() => changeProjectSlide(1), 5000);
 </script>
+
+
+<!-- ------------------- VOLUNTEER SLIDER SCRIPT ------------------- -->
+<script>
+  let currentVolunteerSlide = 0;
+
+  function showVolunteerSlide(index) {
+    const slides = document.getElementById("volunteerSlides");
+    const total = slides.children.length;
+
+    // Wrap around logic
+    if (index >= total) currentVolunteerSlide = 0;
+    else if (index < 0) currentVolunteerSlide = total - 1;
+    else currentVolunteerSlide = index;
+
+    slides.style.transform = `translateX(-${currentVolunteerSlide * 100}%)`;
+  }
+
+  function changeVolunteerSlide(direction) {
+    showVolunteerSlide(currentVolunteerSlide + direction);
+  }
+
+  // Auto-slide every 7 seconds (different interval)
+  setInterval(() => changeVolunteerSlide(1), 7000);
+</script>
+
 
 <script>
   var tablinks = document.getElementsByClassName("tab-links");
